@@ -1,6 +1,6 @@
-import React from "react";
-import TodoList from "./components/TodoList";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
+import TodoList from './TodoList';
 
 const ToDoLists = () => {
   const [todoLists, setTodoLists] = useState([
