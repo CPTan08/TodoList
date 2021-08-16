@@ -63,16 +63,10 @@ class TodoList extends React.Component {
       this.setState({ todos: [...todosWithoutItem] });
     };
   }
-  displayTodos() {
-    return this.state.todos.map((todo) => {
-      <input
-        type="text"
-        value={this.state.newItemName}
-        onChange={this.handleChange}
-        placeholder="Take a break"
-      />;
-      <button onClick={() => this.addNewTodo()}>add</button>;
 
+  displayTodos() {
+    console.log(this.props);
+    return this.state.todos.map((todo) => {
       // 4. add a method that can change the status of isDone
       const setTodo = this.createSetTodo(todo);
 
@@ -95,7 +89,14 @@ class TodoList extends React.Component {
   render() {
     return (
       <div>
-        <div className="header">Things To Do</div>
+        <div className="header">{this.props.title}</div>
+        <input
+          type="text"
+          value={this.state.newItemName}
+          onChange={this.handleChange}
+          placeholder="Take a break"
+        />
+        <button onClick={() => this.addNewTodo()}>add</button>
         <div className="items">{this.displayTodos()}</div>
       </div>
     );
