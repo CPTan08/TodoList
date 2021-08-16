@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import TodoList from './TodoList';
 
-const ToDoLists = () => {
+const TodoLists = () => {
   const [todoLists, setTodoLists] = useState([
     {
       id: uuidv4(),
@@ -18,4 +18,4 @@ const ToDoLists = () => {
     </div>
   );
 };
-export default ToDoLists;
+export default TodoLists;
