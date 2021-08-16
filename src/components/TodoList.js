@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 import { v4 as uuidv4 } from "uuid"; // 1. import the UUID
 import "./TodoList.css";
 
-const TodoList = ({ title }) => {
+const TodoList = ({ id, title, deleteTodoList }) => {
   const [todoItems, setTodoItems] = useState([
     {
       id: uuidv4(), // 2. add uuid to the item
@@ -69,9 +69,9 @@ const TodoList = ({ title }) => {
 
   return (
     <div>
-      {/* <button onClick={() => this.props.deleteTodoList(this.props.id)}>
+      <button onClick={() => deleteTodoList(id)}>
         Delete
-      </button> */}
+      </button>
       <div className="header">{title}</div>
       <input
         type="text"
